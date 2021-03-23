@@ -1,5 +1,8 @@
 # TwitterBot
-Code relating to my twitter bot, which can be found [here](https://twitter.com/WhatDoITweetBot). (The bot and the template are both WIP.)
+Code relating to my twitter bot, which can be found [here](https://twitter.com/WhatDoITweetBot).
+
+## Interacting with the bot
+For more information on interacting with the bot, see `USERGUIDE.md`.
 
 ## Setup
 ### Fork it!
