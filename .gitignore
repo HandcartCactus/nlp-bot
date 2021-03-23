@@ -1,0 +1,7 @@
+configs/config.ini
+configs/keys.txt
+.dccache
+data/*
+src/__pycache__/*
+images/*
+.vscode/*
