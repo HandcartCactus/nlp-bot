@@ -59,7 +59,7 @@ Are you very verbose? The bot defaults to 20000 unique words, but can also be co
 
 #### Notes
 
-The topic model was tricky to implement satisfactorily. NMF and LDA just weren't cuting it. I ended up implementing a new model called CorEx Topic, Which was based on this paper:
+The topic model was tricky to implement satisfactorily. NMF and LDA just weren't cutting it. I ended up implementing a new model called CorEx Topic, Which was based on this paper:
 
 ```quote
 Gallagher, R. J., Reing, K., Kale, D., and Ver Steeg, G. "Anchored Correlation Explanation: Topic Modeling with Minimal Domain Knowledge." Transactions of the Association for Computational Linguistics (TACL), 2017.
