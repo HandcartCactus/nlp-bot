@@ -66,7 +66,6 @@ class MentionsLogger(object):
 
     def _append(self, flat_tweet):
         df = pd.read_csv(self.fpath, index_col=0)
-        print(df)
         df = df.append(flat_tweet, ignore_index=True)
         df.to_csv(self.fpath)
 

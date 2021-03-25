@@ -6,6 +6,8 @@ import time
 from datetime import datetime, timedelta
 from twitter import TwitterError
 
+import utils
+
 
 class MentionsIDStorage(object):
     def __init__(self, filepath):
@@ -138,7 +140,8 @@ class MentionsListener(object):
                 self.mids.set_id(most_recent_id)
 
                 for mention in mentions:
-                    self.msg(f'\t{mention}', verbose)
+                    tweet_str = utils.format_mention(mention)
+                    self.msg(f'\t{tweet_str}', verbose)
                     yield mention
 
             # wait to avoid hitting the rate limit

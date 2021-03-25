@@ -53,6 +53,7 @@ if __name__ == '__main__':
     for mention in mentions_listener.listen(verbose=True):
         mentions_logger.log(mention)
         cmd = command_manager.parse(mention)
+        print('\t',cmd)
         output = cmd.reply_tweet()
 
 

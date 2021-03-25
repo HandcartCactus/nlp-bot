@@ -8,12 +8,16 @@ class Command(ABC):
         self.tweet_id = int(tweet_id)
         self.user_id = user_id
         self.options_string = options_string
+        self.repr = 'Generic Command Class'
 
     
     @abstractclassmethod
     def reply_tweet(self):
         #self.api.PostUpdate(status)
         pass
+
+    def __repr__(self):
+        return self.repr
 
 class Help(Command):
     def reply_tweet(self):
@@ -22,3 +26,6 @@ class Help(Command):
             self.api.PostUpdate(status=message, in_reply_to_status_id=self.tweet_id, auto_populate_reply_metadata=True)
         except TwitterError as e:
             print(e)
+
+    def __repr__(self):
+        return "Help Command"

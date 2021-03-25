@@ -13,17 +13,21 @@ class TopicModelCorEx(Command):
     def parse_options(self):
         if not self.options_string is None:
             opts = self.options_string.split(' ')
+            print(opts)
             if 'n_topics' in opts:
+                print('topics!')
                 idx = opts.index('n_topics')
+                print(idx)
                 try:
-                    self.n_topics = opts[idx+1]
+                    self.n_topics = int(opts[idx+1])
+                    print(opts[idx+1])
                 except:
                     pass
 
             if 'n_features' in opts:
                 idx = opts.index('n_features')
                 try:
-                    self.n_features = opts[idx+1]
+                    self.n_features = int(opts[idx+1])
                 except:
                     pass
 
@@ -69,9 +73,13 @@ class TopicModelCorEx(Command):
         return a
 
     def reply_tweet(self):
+        self.parse_options()
         self.set_topic_model()
         tweet_id = self.tweet_id
         for i in range(self.n_topics):
             m = self.get_words(i)
             my_tweet = self.send_single_rt(m, tweet_id)
             tweet_id = my_tweet.id
+    
+    def __repr__(self):
+        return "TopicModelCorEx Command"
