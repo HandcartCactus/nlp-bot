@@ -7,7 +7,7 @@ from flatten_json import flatten
 import pandas as pd
 
 class CommandManager(object):
-    def __init__(self, api, commands, help_command):
+    def __init__(self, api, commands, help_command, command_configs):
         """Parses Mentions Tweet content and returns relevant commands, already constructed
 
         Args:
@@ -18,6 +18,7 @@ class CommandManager(object):
         self.api = api
         self.commands = commands
         self.help_command = help_command
+        self.config = command_configs
 
     def _full_text_2_cmd(self, full_text, make_lowercase=True):
         try:
@@ -48,7 +49,7 @@ class CommandManager(object):
             return self.help_command(self.api, tweet_id, user_id)
         else:
             options = self._full_text_2_options(text)
-            return cmd_class(api=self.api, tweet_id=tweet_id, user_id=user_id, options_string=options)
+            return cmd_class(api=self.api, tweet_id=tweet_id, user_id=user_id, config=self.config, options_string=options)
 
 
 class MentionsLogger(object):

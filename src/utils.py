@@ -13,4 +13,24 @@ def format_mention(tweet):
     s = f"Tweet: \"{text}\" from {user_n} (@{user_sn}, {user_followers} followers) at {at}."
     return s
 
+def split_string(s, lim=280, sep=' '):
+    tokens = s.split(sep)
+    tweets = []
+    this_tweet = ""
+    for t in tokens:
+        if len(this_tweet) + len(sep) + len(t) >= 280:
+            tweets.append(this_tweet)
+            this_tweet = t
+        else:
+            this_tweet += sep + t
+
+    if len(this_tweet) > 0:
+        tweets.append(this_tweet)
+
+    return tweets
+
+
+
+
+
 

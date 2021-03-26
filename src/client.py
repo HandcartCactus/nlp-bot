@@ -13,11 +13,13 @@ from interactions import CommandManager, MentionsLogger
 import commands
 import utils
 from topicmodel import TopicModelCorEx
+from tweettimes import TweetTimes
 
 import twitter
 
 commands_dict = {
     'topics': TopicModelCorEx,
+    'when': TweetTimes,
 }
 
 parser = argparse.ArgumentParser()
@@ -42,8 +44,9 @@ if __name__ == '__main__':
     )
 
     paths = config['Paths']
+    command_configs = config['Commands']
 
-    command_manager = CommandManager(api, commands_dict, commands.Help)
+    command_manager = CommandManager(api, commands_dict, commands.Help, command_configs)
     mentions_listener = MentionsListener(api, paths['Latest_Mentions_ID'])
     mentions_logger = MentionsLogger(paths['Mentions_Log'])
 
@@ -51,9 +54,9 @@ if __name__ == '__main__':
     print("Credentials Valid! Starting up...")
 
     for mention in mentions_listener.listen(verbose=True):
-        mentions_logger.log(mention)
         cmd = command_manager.parse(mention)
         print('\t',cmd)
         output = cmd.reply_tweet()
+        mentions_logger.log(mention)
 
 
