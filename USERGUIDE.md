@@ -1,4 +1,4 @@
-# What Do I Tweet Bot's User Guide
+# WhatDoITweetBot's User Guide
 
 [TOC]
 
@@ -46,7 +46,7 @@ The bot defaults to 3 topics, but you can ask it to try to find more. To find 6 
 @WhatDoITweetBot topics n_topics 6
 ```
 
-Are you very verbose? The bot defaults to 20000 unique words, but can also be configured to inorporate more or less words with the `n_features` option.
+Are you very verbose? The bot defaults to 20000 unique words, but can also be configured to incorporate more or less words with the `n_features` option.
 
 ```
 @WhatDoITweetBot topics n_topics 6 n_features 300
@@ -55,6 +55,12 @@ Are you very verbose? The bot defaults to 20000 unique words, but can also be co
 ```
 @WhatDoITweetBot topics n_features 10000
 ```
+
+#### Demo
+
+
+
+<img src="C:\Users\elija\OneDrive\Documents\Projects and Hobbies\Twitter\WhatDoITweetBot\docs\images\Topic_analysis.PNG" alt="Topic_analysis" style="zoom: 67%;" />
 
 #### Notes
 
@@ -68,6 +74,7 @@ The code for CorExTopic can be found on github at https://github.com/gregverstee
 
 ### Tweet Time Analysis
 
+
 #### Use
 
 The bot can run interesting analytics on when you tend to tweet. To try it out, run:
@@ -77,6 +84,14 @@ The bot can run interesting analytics on when you tend to tweet. To try it out, 
 ```
 
 The bot will respond with two plots describing when you tend to tweet, and a textual description of your tweeting habits. The first plot, the "pattern of life" plot, describes your average hourly tweets across weekdays and weekends, broken up by morning, noon-ish, afternoon, evening, and night time segments. The second plot is a breakdown of number of tweets by hour and day of the week. The description includes your most active time by pattern of life, along with basic statistics, and a naive estimate of the latest timestamp on your next tweet.
+
+#### Demo
+
+Plots [@JoeBiden](https://twitter.com/JoeBiden) would see if he interacted with the bot.
+
+<img src="C:\Users\elija\OneDrive\Documents\Projects and Hobbies\Twitter\WhatDoITweetBot\docs\images\sample_cropped\pol_img.png" alt="pol_img"  />
+
+<img src="C:\Users\elija\OneDrive\Documents\Projects and Hobbies\Twitter\WhatDoITweetBot\docs\images\sample_cropped\wh_img.png" alt="wh_img"  />
 
 #### Notes
 
