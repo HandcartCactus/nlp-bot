@@ -60,7 +60,7 @@ Are you very verbose? The bot defaults to 20000 unique words, but can also be co
 
 
 
-<img src="C:\Users\elija\OneDrive\Documents\Projects and Hobbies\Twitter\WhatDoITweetBot\docs\images\Topic_analysis.PNG" alt="Topic_analysis" style="zoom: 67%;" />
+<img src="https://raw.githubusercontent.com/Ejjaffe/nlp-bot/main/docs/images/Topic_analysis.PNG" alt="Topic_analysis" style="zoom: 67%;" />
 
 #### Notes
 
@@ -89,9 +89,9 @@ The bot will respond with two plots describing when you tend to tweet, and a tex
 
 Plots [@JoeBiden](https://twitter.com/JoeBiden) would see if he interacted with the bot.
 
-<img src="C:\Users\elija\OneDrive\Documents\Projects and Hobbies\Twitter\WhatDoITweetBot\docs\images\sample_cropped\pol_img.png" alt="pol_img"  />
+<img src="https://raw.githubusercontent.com/Ejjaffe/nlp-bot/main/docs/images/sample_cropped/pol_img.png" alt="pol_img"  />
 
-<img src="C:\Users\elija\OneDrive\Documents\Projects and Hobbies\Twitter\WhatDoITweetBot\docs\images\sample_cropped\wh_img.png" alt="wh_img"  />
+<img src="https://raw.githubusercontent.com/Ejjaffe/nlp-bot/main/docs/images/sample_cropped/wh_img.png" alt="wh_img"  />
 
 #### Notes
 
