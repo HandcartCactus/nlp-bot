@@ -24,6 +24,11 @@ commands_dict = {
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--config', help='configuration file')
+parser.add_argument(
+    '--minsexpire',
+    help='minutes to expire in',
+    default=None
+)
 
 
 if __name__ == '__main__':
@@ -53,7 +58,9 @@ if __name__ == '__main__':
     assert utils.api_cert_validate(api)
     print("Credentials Valid! Starting up...")
 
-    for mention in mentions_listener.listen(verbose=True):
+    td_expire = timedelta(minutes=args.minsexpire)
+
+    for mention in mentions_listener.listen(verbose=True, expire_in=td_expire):
         cmd = command_manager.parse(mention)
         print('\t',cmd)
         output = cmd.reply_tweet()
