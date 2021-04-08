@@ -25,8 +25,9 @@ commands_dict = {
 parser = argparse.ArgumentParser()
 parser.add_argument('--config', help='configuration file')
 parser.add_argument(
-    '--minsexpire',
+    '-e',
     help='minutes to expire in',
+    type=int,
     default=None
 )
 
